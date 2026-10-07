@@ -1,20 +1,19 @@
 public class Recursive1 {
-    public static int nextInt(int length, int current){
-            newNum+= ((int) (Math.random()*10));
-            while((newNum+"").length()<length){
-                for(int putNum =(newNum%10)+1; putNum<=9; putNum++){
-                    if(newNum==0){
-                        newNum+=putNum;
-                    }
 
-                }
+
+    public static void makeInt(int length, int current){
+            if(length==0){
+                System.out.println(current);
+                return;
             }
-            return newNum;
+            int lastNum  = current%10;
+            for(int i = lastNum +1; i<=9;i++){
+                makeInt(length-1, current*10+i);
+            }
+
     }
-    public static int makesInts(int length){
-        int current = 0;
-        while((current+"").length()<length){
-            nextInt(length,current);
+    public static void starts(int length){
+            makeInt(length, 0);
         }
     }
-}
+
