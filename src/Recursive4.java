@@ -13,9 +13,12 @@ public class Recursive4 {
                 System.out.println(s);
                 return;
             }
-            generate(n, s + "1");
-            generate(n, s + "0");
+            else if(checkSumHalf(s.substring(0, n / 2)) =! checkSumHalf(s.substring((n / 2))));{
+                return;
+            }
         }
+        generate(n, s + "1");
+        generate(n, s + "0");
 
     }
 
@@ -23,12 +26,19 @@ public class Recursive4 {
         int sum = 0;
         if (s.length() > 0) {
             int indexPlace = s.length() - 1;
-            if (parseInt(s.substring(indexPlace)) == 1) {
-                sum++;
+            if (indexPlace > 0) {
+                if (parseInt(s.substring(indexPlace)) == 1) {
+                    sum++;
+                }
+                indexPlace--;
                 checkSumHalf(s.substring(indexPlace - 1, indexPlace));
+                return sum;
             }
-            return sum;
         }
         return sum;
+    }
+
+    public static void main(String[] args) {
+        generate(2, "1");
     }
 }
