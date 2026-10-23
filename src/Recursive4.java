@@ -38,7 +38,4 @@ public class Recursive4 {
         return sum;
     }
 
-    public static void main(String[] args) {
-        generate(2, "1");
-    }
 }
